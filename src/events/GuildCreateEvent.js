@@ -4,7 +4,7 @@
 const BaseEvent = require('../utils/structures/BaseEvent');
 const GuildConfig = require('../db/schemas/GuildConfig');
 
-// 
+// Add joined bot to DB
 module.exports = class GuildCreateEvent extends BaseEvent {
   constructor() {
     super('guildCreate');
