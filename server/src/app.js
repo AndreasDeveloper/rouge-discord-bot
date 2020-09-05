@@ -4,6 +4,9 @@ require('./strategies/discord');
 const express = require('express');
 const passport = require('passport');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const Store = require('connect-mongo')(session);
+
 const app = express();
 const routes = require('./routes/index');
 
@@ -18,6 +21,17 @@ mongoose.connect(DB, {
 }).then(() => {
   console.log('Database connected');
 });
+
+// Express session
+app.use(session({
+    secret: 'secret',
+    cookie: {
+        maxAge: 60000 * 60 * 24
+    },
+    resave: false,
+    saveUninitialized: false,
+    store: new Store({ mongooseConnection: mongoose.connection })
+}));
 
 // Init Passport
 app.use(passport.initialize());
