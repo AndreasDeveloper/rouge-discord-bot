@@ -8,14 +8,14 @@ export function MenuPage({ history }) {
     const [guilds, setGuilds] = React.useState([]);
 
     React.useEffect(() => {
-        getUserDetails().then(data => {
+        getUserDetails().then(( { data } ) => {
             console.log(data);
             setUser(data);
             setLoading(false);
             return getGuilds();
-        }).then(data => {
+        }).then(( { data } ) => {
             console.log(data);
-            setGuilds(data.data);
+            setGuilds(data);
         }).catch(err => {
             history.push('/');
             setLoading(false);

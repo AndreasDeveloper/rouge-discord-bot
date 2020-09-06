@@ -26,12 +26,22 @@ router.put('/guilds/:guildId/prefix', async (req, res) => {
     if (!prefix) return res.status(400).send({ msg: 'Prefix required' });
     const update = await GuildConfig.findOneAndUpdate({ guildId }, { prefix }, { new: true });
     if (update) {
-        res.send(update);
+        return res.send(update);
     } else {
-        res.status(400).send({ msg: 'Could not find document' });
+        return res.status(400).send({ msg: 'Could not find document' });
     }
 });
 
+// 
+router.get('/guilds/:guildId/config', async (req, res) => {
+    const { guildId } = req.params;
+    const config = await GuildConfig.findOne({ guildId });
+    if (config) {
+        return res.send(config);
+    } else {
+        return res.status(404).send({ msg: 'Not found' });
+    }
+});
 
 
 // Exporting router

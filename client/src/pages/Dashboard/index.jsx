@@ -1,17 +1,20 @@
 import React from 'react';
-import { getUserDetails } from '../../utils/api';
-import { Formik } from 'formik';
-import { Input, Button } from '@chakra-ui/core';
+import { getUserDetails, getGuildConfig } from '../../utils/api';
+import { DashboardComponent } from '../../components';
 
-export function DashboardPage({ history }) {
+export function DashboardPage({ history, match }) {
     const [user, setUser] = React.useState(null);
     const [loading, setLoading] = React.useState(true);
-    const [prefix, setPrefix ] = React.useState('?');
+    const [config, setConfig] = React.useState({});
 
     React.useEffect(() => {
-        getUserDetails().then(data => {
+        getUserDetails().then(( { data } ) => {
             console.log(data);
             setUser(data);
+            return getGuildConfig(match.params.id);
+        }).then(( { data } ) => { // (( { data } )) - This syntax is for destructuring
+            console.log(data);
+            setConfig(data);
             setLoading(false);
         }).catch(err => {
             history.push('/');
@@ -22,18 +25,7 @@ export function DashboardPage({ history }) {
     return !loading && (
         <div>
             <h1>Dashboard Page</h1>
-            <Formik initialValues={{ prefix }} onSubmit={(values) => {
-                console.log(values);
-            }}>
-                {
-                    (props) => (
-                        <form onSubmit={props.handleSubmit}>
-                            <Input type="text" name="prefix" onChange={props.handleChange} defaultValue={prefix} />
-                            <Button type="submit" variantColor="orange" children="Update prefix" />
-                        </form>
-                    )
-                }
-            </Formik>
+            <DashboardComponent user={user} config={config} />
         </div>
     );
 }
