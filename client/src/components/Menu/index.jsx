@@ -9,7 +9,7 @@ export function MenuComponent({ guilds }) {
             {guilds.map((guild) => (
                 <div>
                     <li>{guild.name}</li>
-                    <Link to={ `/dashboard/${guild.id}` }>View Dashboard</Link>
+                    <Link to={ `/dashboard/${guild.id}` } className="guild-link">View Dashboard</Link>
                 </div>
             ))}
         </div>
