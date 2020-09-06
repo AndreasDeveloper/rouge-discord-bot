@@ -5,6 +5,7 @@ const express = require('express');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const cors = require('cors');
 const Store = require('connect-mongo')(session);
 
 const app = express();
@@ -21,6 +22,12 @@ mongoose.connect(DB, {
 }).then(() => {
   console.log('Database connected');
 });
+
+// Using CORS
+app.use(cors({
+    origin: ['http://localhost:3000'],
+    credentials: true
+}));
 
 // Express session
 app.use(session({
