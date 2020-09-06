@@ -3,7 +3,9 @@ const router = require('express').Router();
 const User = require('../db/schemas/User');
 const { getBotGuilds } = require('../utils/api');
 const { getMutualGuilds } = require('../utils/utils');
+const GuildConfig = require('../db/schemas/GuildConfig');
 
+// Get bot guilds / servers
 router.get('/guilds', async (req, res) => {
     const guilds = await getBotGuilds();
     const user = await User.findOne({ discordId: req.user.discordId });
@@ -14,6 +16,19 @@ router.get('/guilds', async (req, res) => {
         res.send(mutualGuilds);
     } else {
         return res.status(401).send({ msg: 'Unauthorized' });
+    }
+});
+
+// Update prefix
+router.put('/guilds/:guildId/prefix', async (req, res) => {
+    const { prefix } = req.body;
+    const { guildId } = req.params;
+    if (!prefix) return res.status(400).send({ msg: 'Prefix required' });
+    const update = await GuildConfig.findOneAndUpdate({ guildId }, { prefix }, { new: true });
+    if (update) {
+        res.send(update);
+    } else {
+        res.status(400).send({ msg: 'Could not find document' });
     }
 });
 

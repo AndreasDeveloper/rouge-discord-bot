@@ -23,6 +23,10 @@ mongoose.connect(DB, {
   console.log('Database connected');
 });
 
+// Parse json objects sent to request body object
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 // Using CORS
 app.use(cors({
     origin: ['http://localhost:3000'],
