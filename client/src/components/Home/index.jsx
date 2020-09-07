@@ -11,7 +11,7 @@ export function HomeComponent() {
             <div className="header-container">
                 <Logo fill="#fff" width="300px" height="auto" className="header-logo" />
                 <h1 className="header-container__header-title">Bot That Doesnt Care</h1>
-                <Button onClick={login}>Login</Button>
+                <Button onClick={login}>login</Button>
             </div>
         </Header>
     );

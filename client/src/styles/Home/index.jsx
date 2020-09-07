@@ -41,8 +41,8 @@ export const Header = styled.header`
         align-items: center;
         &__header-title {
             color: #fff;
-            font-size: 42px;
-            font-weight: 500;
+            font-size: 38px;
+            font-weight: 600;
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 4px;
