@@ -14,7 +14,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "styled-components": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,7 +40,7 @@
   },
   "devDependencies": {
     "faker": "^5.1.0",
-    "jest": "^26.4.2",
+    "jest": "^24.9.0",
     "jest-cli": "^26.4.2",
     "puppeteer": "^5.2.1"
   }
