@@ -44,6 +44,7 @@ export const Header = styled.header`
             font-size: 42px;
             font-weight: 500;
             text-transform: uppercase;
+            text-align: center;
             letter-spacing: 4px;
         }
     }
