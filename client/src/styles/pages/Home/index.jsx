@@ -1,22 +1,22 @@
 import styled, { css } from 'styled-components';
+import { queries, colors } from '../../base/_base.js'
 
 export const Button = styled.button`
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid ${colors.white};
     border-radius: 20px;
-    color: #fff;
+    color: ${colors.white};
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
     transition: all .2s ease-in-out;
     letter-spacing: 2.5px;
     margin-top: 30px;
-    padding: 5px 10px;
+    padding: 6px 30px;
     outline: none;
-    width: 150px;
     &:hover {
-        background-color: #fff;
-        color: #000;
+        background-color: ${colors.white};
+        color: ${colors.black};
     }
 `;
 
@@ -40,12 +40,25 @@ export const Header = styled.header`
         flex-direction: column;
         align-items: center;
         &__header-title {
-            color: #fff;
+            color: ${colors.white};
             font-size: 38px;
             font-weight: 600;
             text-transform: uppercase;
             text-align: center;
             letter-spacing: 4px;
+        }
+        &__button-wrap {
+            display: flex;
+            margin-top: 20px;
+            @media only screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+            &__btn {
+                margin: 0 10px;
+                @media only screen and (max-width: 768px) {
+                    margin: 10px 0;
+                }
+            }
         }
     }
 `;
