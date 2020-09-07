@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Header } from '../../styles/Home';
-import hero from '../../images/hero2.png';
+import hero from '../../images/hero3.jpg';
 import { ReactComponent as Logo } from '../../images/discord-logo.svg';
 
 export function HomeComponent() {

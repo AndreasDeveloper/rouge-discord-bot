@@ -29,7 +29,7 @@ export const Header = styled.header`
     .header-hero {
         height: 100vh;
         width: 100%;
-        filter: brightness(15%);
+        filter: brightness(20%);
     }
     .header-container {
         position: absolute;
