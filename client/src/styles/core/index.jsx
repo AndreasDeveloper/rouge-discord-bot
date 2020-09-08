@@ -9,9 +9,9 @@ export const NavStyle = styled.div`
     }
 
     a {
-    cursor: pointer;
-    color: ${colors.textColor} !important;
-    text-decoration: none;
+        cursor: pointer;
+        color: ${colors.textColor} !important;
+        text-decoration: none;
     }
 
     /* Top Navigation Bar */
