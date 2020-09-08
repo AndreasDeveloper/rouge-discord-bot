@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NavbarComponent } from '../Home/Navigation';
+import { NavStyle } from '../../styles/core';
 import { Button, Header } from '../../styles/pages/Home';
 import hero from '../../images/hero4.jpg';
 
@@ -8,7 +9,9 @@ export function MenuComponent({ guilds }) {
 
     return (
         <>
-        <NavbarComponent />
+        <NavStyle>
+            <NavbarComponent />
+        </NavStyle>
         <Header>
             <img src={hero} alt="Discord Wallpaper" className="header-hero" />
             <div className="header-container">

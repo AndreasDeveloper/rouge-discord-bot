@@ -3,12 +3,15 @@ import { Button, Header } from '../../styles/pages/Home';
 import hero from '../../images/hero3.jpg';
 import { ReactComponent as Logo } from '../../images/discord-logo.svg';
 import { NavbarComponent } from './Navigation';
+import { NavStyle } from '../../styles/core';
 
 export function HomeComponent() {
     const login = () => window.location.href = 'http://localhost:3001/api/auth/discord';
     return (
         <>
-        <NavbarComponent />
+        <NavStyle>
+            <NavbarComponent />
+        </NavStyle>
         <Header>
             <img src={hero} alt="Discord Wallpaper" className="header-hero" />
             <div className="header-container">
