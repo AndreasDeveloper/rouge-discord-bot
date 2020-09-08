@@ -3,12 +3,13 @@ import { CSSTransition } from 'react-transition-group';
 import { ReactComponent as SettingsIcon } from '../../icons/settings-outline.svg';
 import { ReactComponent as ArrowRight } from '../../icons/chevron-forward-outline.svg';
 import { ReactComponent as HomeIcon } from '../../icons/home-outline.svg';
+import { ReactComponent as DashboardIcon } from '../../icons/apps-outline.svg';
 
 export function NavbarComponent() {
     return (
         <Navbar>
             <NavItem link="/" icon={<HomeIcon fill="#fff" />} />
-            <NavItem link="/menu" icon="🦔" />
+            <NavItem link="/menu" icon={<DashboardIcon fill="#fff" />} />
 
             <NavItem icon={<SettingsIcon fill="#fff" />}>
                 <DropdownMenu></DropdownMenu>

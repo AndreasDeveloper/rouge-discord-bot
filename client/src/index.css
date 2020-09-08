@@ -38,7 +38,7 @@ a {
     background-color: var(--bg);
     opacity: 0.9;
     padding: 0 1rem;
-    border-bottom: var(--border);
+    /* border-bottom: var(--border); */
     position: absolute;
     width: 100%;
     z-index: 1;
@@ -83,7 +83,7 @@ a {
   width: 20px;
   height: 20px;
 }
-.icon-button svg path, .icon-button svg polyline {
+.icon-button svg path, .icon-button svg polyline, .icon-button svg rect {
   stroke: #fff !important;
 }
 .icon-right svg polyline {
