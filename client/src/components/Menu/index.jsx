@@ -17,15 +17,14 @@ export function MenuComponent({ guilds }) {
             <div className="header-container">
                 <h1 className="header-container__header-title">Bot and Guilds</h1>
                 <div className="header-container__button-wrap">
-                    <Button className="header-container__button-wrap__btn">Discover</Button>
+                    <a href="#servers"><Button className="header-container__button-wrap__btn">Discover</Button></a>
                 </div>
             </div>
         </Header>
-        <div>
-            <h1>Menu Component</h1>
+        <div id="servers">
             <h3><strong>Bot is in the following servers</strong></h3>
             {guilds.included.map((guild, index) => (
-                <div key={index}>
+                <div key={guild.id}>
                     <li>{guild.name}</li>
                     <Link to={ `/dashboard/${guild.id}` } className="guild-link">View Dashboard</Link>
                 </div>
