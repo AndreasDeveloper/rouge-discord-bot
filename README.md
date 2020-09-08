@@ -8,3 +8,4 @@ Built using following technologies:
 * MongoDB with Mongoose
 * Discord API (for Authorization, Authentication, Bot Invitations, Guild management etc.)
 * CSS in JS (Styled Components)
+* E2E Tests with Jest and Puppeteer
