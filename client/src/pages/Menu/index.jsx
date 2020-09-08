@@ -24,7 +24,6 @@ export function MenuPage({ history }) {
 
     return !loading && (
         <div>
-            <h1>Menu Page</h1>
             <MenuComponent guilds={ guilds } />
         </div>
     );

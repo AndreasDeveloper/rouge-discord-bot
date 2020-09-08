@@ -26,6 +26,7 @@ ul {
 }
 
 a {
+  cursor: pointer;
   color: var(--text-color) !important;
   text-decoration: none;
 }
@@ -83,7 +84,10 @@ a {
   width: 20px;
   height: 20px;
 }
-.icon-button svg path, .icon-button svg polyline, .icon-button svg rect {
+.icon-button svg path, 
+.icon-button svg polyline, 
+.icon-button svg rect,
+.icon-button svg line {
   stroke: #fff !important;
 }
 .icon-right svg polyline {

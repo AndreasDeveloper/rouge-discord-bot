@@ -2,16 +2,19 @@ import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { ReactComponent as SettingsIcon } from '../../icons/settings-outline.svg';
 import { ReactComponent as ArrowRight } from '../../icons/chevron-forward-outline.svg';
+import { ReactComponent as ArrowLeft } from '../../icons/chevron-back-outline.svg';
 import { ReactComponent as HomeIcon } from '../../icons/home-outline.svg';
 import { ReactComponent as DashboardIcon } from '../../icons/apps-outline.svg';
+import { ReactComponent as PersonIcon } from '../../icons/person-outline.svg';
+import { ReactComponent as MenuIcon } from '../../icons/menu-outline.svg';
 
 export function NavbarComponent() {
     return (
         <Navbar>
-            <NavItem link="/" icon={<HomeIcon fill="#fff" />} />
-            <NavItem link="/menu" icon={<DashboardIcon fill="#fff" />} />
+            <NavItem link="/" icon={<HomeIcon />} />
+            <NavItem link="/menu" icon={<DashboardIcon />} />
 
-            <NavItem icon={<SettingsIcon fill="#fff" />}>
+            <NavItem icon={<MenuIcon />}>
                 <DropdownMenu></DropdownMenu>
             </NavItem>
         </Navbar>
@@ -78,7 +81,7 @@ function DropdownMenu() {
                 <div className="menu">
                     <DropdownItem>Menu</DropdownItem>
                     <DropdownItem
-                        leftIcon="🦔"
+                        leftIcon={<SettingsIcon />}
                         rightIcon={<ArrowRight />}
                         goToMenu="settings">
                         Settings
@@ -93,10 +96,10 @@ function DropdownMenu() {
                 unmountOnExit
                 onEnter={calcHeight}>
                 <div className="menu">
-                    <DropdownItem goToMenu="main" leftIcon="🦔">
-                        <h2>My Tutorial</h2>
+                    <DropdownItem goToMenu="main" leftIcon={<ArrowLeft />}>
+                        <h2>Back</h2>
                     </DropdownItem>
-                    <DropdownItem leftIcon="🦔">HTML</DropdownItem>
+                    <DropdownItem leftIcon={<PersonIcon />}>Profile</DropdownItem>
                     <DropdownItem leftIcon="🦔">CSS</DropdownItem>
                     <DropdownItem leftIcon="🦔">JavaScript</DropdownItem>
                     <DropdownItem leftIcon="🦔">Awesome!</DropdownItem>
